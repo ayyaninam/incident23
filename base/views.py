@@ -1,8 +1,6 @@
-from urllib import request
 from .models import *
 from django.shortcuts import render
 import pandas as pd
-import uuid
 from django.conf import settings
 from rest_framework.response import Response
 from rest_framework.views import APIView
