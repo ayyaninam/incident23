@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 
+import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -133,14 +135,25 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'django incidence app database',
+#         'USER': 'postgres',
+#         'PASSWORD': '********',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django incidence app database',
-        'USER': 'postgres',
-        'PASSWORD': 'Pakistan',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'd77115uq0fvdh',
+        'USER': 'yacayacsexbmyk',
+        'PASSWORD': '1eb23c5e877c121ee1e9c4eb8f70444c737bf6fd90bae1bf0fea21ae8b62740c',
+        'HOST': 'ec2-44-194-92-192.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -187,6 +200,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
-
+django_heroku.settings(locals())
 
 CORS_ORIGIN_ALLOW_ALL = True
